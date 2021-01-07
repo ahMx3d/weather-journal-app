@@ -31,17 +31,7 @@ app.get('/all', (req, res)=>res.send(projectData).status(200).end());
 
 // POST Route.
 app.post('/data',(req, res)=>{
-    // console.log(req.body);
     const {temp,date,utxt} = req.body;
     projectData = {temp,date,utxt}
-    // const body = req.body;
-    // projectData = {
-    //     temp: body.temp,
-    //     date: body.date,
-    //     utxt: body.utxt
-    // }
-    // projectData['temp'] = body.temp;
-    // projectData['date'] = body.date;
-    // projectData['utxt'] = body.utxt;
     res.send(projectData).status(200).end();
 });

@@ -1,7 +1,7 @@
 /* Global Variables */
 const
-    apiURL      = 'http://api.openweathermap.org/data/2.5/forecast?id=',
-    apiKey      = '&appid=0d699f5298ce6c667b2a83f7971fd68f&units=metric',
+    apiURL      = 'http://api.openweathermap.org/data/2.5/forecast?zip=',
+    apiKey      = ',us&appid=0d699f5298ce6c667b2a83f7971fd68f&units=metric',
     zipInp      = document.getElementById('zip'),
     dateDiv     = document.getElementById('date'),
     tempDiv     = document.getElementById('temp'),
@@ -72,9 +72,9 @@ const updateUI = async ()=>{
     try {
         // Update UI with the server stored API data.
         await req.json().then(data=>{
-            dateDiv.textContent    = `Date: ${data.date}`;
-            tempDiv.textContent    = `Temperature: ${data.temp}`;
-            contentDiv.textContent = `Feelings: ${data.utxt}`;
+            dateDiv.innerHTML    = `Date: ${data.date}`;
+            tempDiv.innerHTML    = `Temperature: ${data.temp}`;
+            contentDiv.innerHTML = `Feelings: ${data.utxt}`;
         });
     } catch (error) {
         console.error('Error occurred:', error);
